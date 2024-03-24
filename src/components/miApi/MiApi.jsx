@@ -2,6 +2,7 @@ import { useEffect, useState} from 'react';
 import {API_COUNTRIES} from '../../constans/constans';
 import Cards from '../card/Cards';
 import Titulo from '../titulo/Titulo';
+import Form from '../form/Form';
 import './MiApi.css'
 
 function MiApi() {
@@ -11,14 +12,19 @@ function MiApi() {
       const response = await fetch(`${API_COUNTRIES}`);
       const data = await response.json();
       setDataApi(data)
-      console.log(data);
     }
     getApi();
   }, []);
 
   return (
     <>
-      <Titulo style={{fontSize: '2rem', marginBottom: '1rem'}} texto="Api de paises, Prueba React" />
+      <header className='header-t'>
+        <Titulo
+          style={{ fontSize: "1.5rem", color: "#fff" }}
+          texto="Api de paises, Prueba React"
+        />
+      </header>
+      <Form style={{marginLeft: '1.5rem'}} />
       <section className="container-api">
         {dataApi.length > 0 ? (
           dataApi.map((item) => (
@@ -27,6 +33,8 @@ function MiApi() {
               flag={item.flags.png}
               name={item.name.official}
               capital={item.capital}
+              region={item.region}
+              timezones={item.timezones}
             />
           ))
         ) : (

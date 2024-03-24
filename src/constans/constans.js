@@ -5,5 +5,5 @@ const API_COUNTRIES = 'https://restcountries.com/v3.1/all';
 export {
     API_NASA,
     API_KEY,
-    API_COUNTRIES
+    API_COUNTRIES,
 }

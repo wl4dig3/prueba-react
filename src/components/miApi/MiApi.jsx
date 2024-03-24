@@ -6,7 +6,6 @@ import './MiApi.css'
 
 function MiApi() {
   const [dataApi, setDataApi] = useState([]);
-  // https://rickandmortyapi.com/api/character
   useEffect(() => {
     async function getApi() {
       const response = await fetch(`${API_COUNTRIES}`);
@@ -19,7 +18,7 @@ function MiApi() {
 
   return (
     <>
-      <Titulo style={{fontSize: '2rem', marginBottom: '1rem'}} texto="Api de paises, Prueba Reactt" />
+      <Titulo style={{fontSize: '2rem', marginBottom: '1rem'}} texto="Api de paises, Prueba React" />
       <section className="container-api">
         {dataApi.length > 0 ? (
           dataApi.map((item) => (

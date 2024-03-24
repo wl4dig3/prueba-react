@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
-    background-color: blueviolet;
+    justify-content: space-around;
 }
 .spinner {
     border: 4px solid rgba(0, 0, 0, .1);

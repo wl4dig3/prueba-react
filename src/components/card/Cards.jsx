@@ -1,23 +1,21 @@
 import Card from 'react-bootstrap/Card';
 
-function Cards({name, capital, flag, timezones, region, population}) {
+function Cards({name, image, species, gender, status}) {
   return (
     <Card style={{ marginLeft: '1rem', zIndex: "-1" }}>
-      <Card.Img variant="top" src={flag} alt={name} />
+      <Card.Img variant="top" src={image} alt={name} />
       <Card.Body>
-        <Card.Title className='text-center'>País: {name}</Card.Title>
+        <Card.Title className='text-center'>Personaje: {name}</Card.Title>
         <Card.Text className='text-center'>
-         Capital:  {capital}
+         Species: {species}
         </Card.Text>
         <Card.Text className='text-center'>
-          Region: {region}
+         Gender: {gender}
         </Card.Text>
         <Card.Text className='text-center'>
-          Poblacion: {population}
+         Status: {status}
         </Card.Text>
-        <Card.Text className='text-center'>
-          GMT: {timezones}
-        </Card.Text>
+        
       </Card.Body>
     </Card>
   );

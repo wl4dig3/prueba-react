@@ -3,14 +3,15 @@ import Button from 'react-bootstrap/Button';
 import './Form.css'
 import { API_COUNTRIES } from '../../constans/constans';
 
-function Form({style}) {
+function Form({style, onSearch}) {
     const [buscar, setBuscar] = useState('');
     const handleChange = (e) => setBuscar(e.target.value);
 
     const handleSubmit = async (e) => {
          e.preventDefault;
+         onSearch(buscar)
         try {
-            const response = await fetch(`${API_COUNTRIES}`);
+            const response = await fetch(`${API_COUNTRIES}/all`);
             console.log(response);
         } catch (error) {
             console.log("error busqueda", error);
